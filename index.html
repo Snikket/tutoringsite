@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master English with a Native NYC Tutor | Online English Lessons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            background: #ffed4e;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: white;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #5a6c7d;
+            font-size: 0.95rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .benefits .section-title {
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #667eea;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #5a6c7d;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: #667eea;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            color: #5a6c7d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: #667eea;
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-email {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master English with a Native Tutor from New York City</h1>
+            <p>Personalized 1:1 Online Lessons for Students Across Europe, Middle East & Asia</p>
+            <a href="#contact" class="cta-button">Book Your Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    🗽
+                </div>
+                <div class="about-text">
+                    <h2>Your Passionate English Guide</h2>
+                    <p>Hello! I'm a <span class="highlight">native English speaker from New York City</span>, dedicated to helping international students achieve their language goals with confidence and clarity.</p>
+                    <p>I hold a <span class="highlight">BA in English from Queens College, City University of New York</span>, and a <span class="highlight">Master of Education (MEd) in Teaching English to Speakers of Other Languages from the University of Glasgow, Scotland</span>. This unique combination of American and British education gives me deep insight into both language systems.</p>
+                    <p>My teaching experience spans from <span class="highlight">language centers in NYC and US public schools</span> to online instruction with students across <span class="highlight">Europe, the Middle East, and Asia</span>. I understand the unique challenges faced by non-native speakers and bring a wealth of practical classroom and digital teaching expertise.</p>
+                    <p>Whether you're preparing for an important exam, advancing your career, or simply want to speak more naturally, I'm here to guide you every step of the way with <span class="highlight">authentic New York English</span> and cultural insights you won't find in textbooks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Tailored English Programs for Your Success</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Conversational English</h3>
+                    <p>Build natural speaking confidence through engaging real-world conversations</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Business English</h3>
+                    <p>Master professional communication for meetings, presentations, and networking</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Cambridge Exam Prep</h3>
+                    <p>Comprehensive preparation for FCE, CAE, and CPE certifications</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>IELTS Preparation</h3>
+                    <p>Achieve your target score with proven strategies and practice</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧒</div>
+                    <h3>Children's Lessons</h3>
+                    <p>Fun, interactive classes that make learning English exciting for kids</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Group Classes</h3>
+                    <p>Learn together with peers in dynamic, collaborative sessions</p>
+                </div>
+                <div class="service-card" style="border: 2px solid #ffd700; background: linear-gradient(135deg, #fffbea 0%, #fff9db 100%);">
+                    <div class="service-icon">🎁</div>
+                    <h3>Free Consultation</h3>
+                    <p>Discover your learning path with a complimentary 30-minute session</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Students Choose Me</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Personalized Learning</h3>
+                    <p>Every lesson is customized to your specific goals, learning style, and current level</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Book lessons that fit your timezone and busy lifestyle with convenient online sessions</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🗽</div>
+                    <h3>Authentic NYC English</h3>
+                    <p>Learn genuine American English with native pronunciation and cultural context</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Proven Results</h3>
+                    <p>Track record of success helping students pass exams and achieve language milestones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What My Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The lessons are perfectly tailored to my business needs. I now feel confident leading meetings and presenting to international clients. Highly recommend!</p>
+                    <p class="testimonial-author">Maria K.</p>
+                    <p class="testimonial-location">Madrid, Spain</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I passed my IELTS with a 7.5 thanks to the structured preparation and encouragement. The flexible scheduling made it easy to fit lessons into my work schedule.</p>
+                    <p class="testimonial-author">Ahmed R.</p>
+                    <p class="testimonial-location">Dubai, UAE</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">My son loves his lessons! The teaching style is engaging and fun, and his English has improved dramatically in just three months. We couldn't be happier.</p>
+                    <p class="testimonial-author">Li Wei</p>
+                    <p class="testimonial-location">Shanghai, China</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <h2>Book Your Free Consultation Today!</h2>
+                <p class="contact-subtitle">Let's discuss your goals and create your personalized learning plan</p>
+                <form id="contactForm" action="https://formspree.io/f/myzlyznj" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell me about your English learning goals</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button" id="submitBtn">Send My Free Consultation Request</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-name">Eria Demetriou - NYC English Tutor</p>
+            <a href="mailto:scotmn1@gmail.com" class="footer-email">scotmn1@gmail.com</a>
+            <p class="copyright">© 2025 Eria Demetriou English Tutoring. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for CTA button
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler - AJAX submission to stay on page
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            const form = this;
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.style.display = 'none';
+            formMessage.className = 'form-message';
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    formMessage.textContent = '🎉 Thank you! I will get back to you within 24 hours to schedule your free consultation.';
+                    formMessage.className = 'form-message success';
+                    form.reset();
+                } else {
+                    // Error from Formspree
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Network or other error
+                formMessage.textContent = '❌ Oops! Something went wrong. Please try again or email me directly.';
+                formMessage.className = 'form-message error';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send My Free Consultation Request';
+            }
+        });
+
+        // Animate service cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .testimonial-card, .benefit-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
