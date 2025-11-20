@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master English with a Native NYC Tutor | Online English Lessons</title>
+    <title>PlumeriaEnglish | Master English with a Native NYC Tutor | Online English Lessons</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,11 +25,68 @@
             padding: 0 20px;
         }
 
+        /* Logo/Header */
+        .logo-header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-cta {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 120px 20px 80px;
+            padding: 80px 20px 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -431,11 +488,33 @@
             .contact-container {
                 padding: 30px 20px;
             }
+
+            .logo-text {
+                font-size: 1.4rem;
+            }
+
+            .logo-icon {
+                font-size: 2rem;
+            }
+
+            .header-cta {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <header class="logo-header">
+        <div class="logo-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🌸</span>
+                <span class="logo-text">PlumeriaEnglish</span>
+            </a>
+            <a href="#contact" class="header-cta">Book Free Consultation</a>
+        </div>
+    </header>
+
     <section class="hero">
         <div class="hero-content">
             <h1>Master English with a Native Tutor from New York City</h1>
@@ -444,7 +523,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about">
         <div class="container">
             <div class="about-content">
@@ -453,7 +531,7 @@
                 </div>
                 <div class="about-text">
                     <h2>Your Passionate English Guide</h2>
-                    <p>Hello! I'm a <span class="highlight">native English speaker from New York City</span>, dedicated to helping international students achieve their language goals with confidence and clarity.</p>
+                    <p>Hello! I'm the founder of <span class="highlight">PlumeriaEnglish</span> and a <span class="highlight">native English speaker from New York City</span>, dedicated to helping international students achieve their language goals with confidence and clarity.</p>
                     <p>I hold a <span class="highlight">BA in English from Queens College, City University of New York</span>, and a <span class="highlight">Master of Education (MEd) in Teaching English to Speakers of Other Languages from the University of Glasgow, Scotland</span>. This unique combination of American and British education gives me deep insight into both language systems.</p>
                     <p>My teaching experience spans from <span class="highlight">language centers in NYC and US public schools</span> to online instruction with students across <span class="highlight">Europe, the Middle East, and Asia</span>. I understand the unique challenges faced by non-native speakers and bring a wealth of practical classroom and digital teaching expertise.</p>
                     <p>Whether you're preparing for an important exam, advancing your career, or simply want to speak more naturally, I'm here to guide you every step of the way with <span class="highlight">authentic New York English</span> and cultural insights you won't find in textbooks.</p>
@@ -462,10 +540,9 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2 class="section-title">Tailored English Programs for Your Success</h2>
+            <h2 class="section-title">Blossom in English: Tailored Programs for Your Success</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">💬</div>
@@ -506,7 +583,6 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
             <h2 class="section-title">Why Students Choose Me</h2>
@@ -535,7 +611,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">What My Students Say</h2>
@@ -562,7 +637,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-container">
@@ -588,12 +662,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="footer-name">Eria Demetriou - NYC English Tutor</p>
-            <a href="mailto:scotmn1@gmail.com" class="footer-email">scotmn1@gmail.com</a>
-            <p class="copyright">© 2025 Eria Demetriou English Tutoring. All rights reserved.</p>
+            <p class="footer-name">PlumeriaEnglish</p>
+            <a href="mailto:learn@plumeriaenglish.com" class="footer-email">learn@plumeriaenglish.com</a>
+            <p class="copyright">© 2025 PlumeriaEnglish. All rights reserved.</p>
         </div>
     </footer>
 
@@ -648,13 +721,13 @@
             } catch (error) {
                 // Network or other error
                 formMessage.textContent = '❌ Oops! Something went wrong. Please try again or email me directly.';
-                formMessage.className = 'form-message error';
-            } finally {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send My Free Consultation Request';
-            }
-        });
+                    formMessage.className = 'form-message error';
+                } finally {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send My Free Consultation Request';
+                }
+            });
 
         // Animate service cards on scroll
         const observerOptions = {
