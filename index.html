@@ -30,6 +30,24 @@
         gtag('config', 'AW-17752461212');
     </script>
     
+    <!-- Conversion tracking function -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17752461212/_U4jCK2pr8UbEJyfhJFC',
+                'value': 1.0,
+                'currency': 'USD',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -883,7 +901,7 @@
         <div class="cookie-content">
             <div class="cookie-text">
                 <p><strong>🍪 We use cookies to improve your experience</strong></p>
-                <p>This site uses cookies to measure performance and provide personalized content. By clicking "Accept", you consent to our use of cookies.</p>
+                <p>This site uses Google Ads tracking cookies to measure performance and provide personalized content. By clicking "Accept", you consent to our use of cookies.</p>
             </div>
             <div class="cookie-buttons">
                 <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept All</button>
@@ -1177,7 +1195,9 @@
                 });
                 
                 if (response.ok) {
-                    // Success
+                    // Success - trigger conversion tracking
+                    gtag_report_conversion();
+                    
                     formMessage.textContent = '🎉 Thank you! I will get back to you within 24 hours to schedule your complimentary consultation.';
                     formMessage.className = 'form-message success';
                     form.reset();
