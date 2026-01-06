@@ -6,6 +6,30 @@
     <title>PlumeriaEnglish | Premium English Coaching for Global Professionals | Native NYC Tutor</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Consent Mode v2 - Must load BEFORE gtag -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default consent to denied
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17752461212"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17752461212');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -24,6 +48,92 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.98);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cookie-consent.show {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .cookie-text p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .cookie-text a {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .cookie-accept {
+            background: #ffd700;
+            color: #2c3e50;
+        }
+
+        .cookie-accept:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cookie-decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Logo/Header */
@@ -136,8 +246,6 @@
             background-size: cover;
             opacity: 0.5;
         }
-
-
 
         .hero-content {
             position: relative;
@@ -751,10 +859,39 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .cookie-btn {
+                flex: 1;
+                min-width: 120px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p><strong>🍪 We use cookies to improve your experience</strong></p>
+                <p>This site uses Google Ads tracking cookies to measure performance and provide personalized content. By clicking "Accept", you consent to our use of cookies.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept All</button>
+                <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
     <header class="logo-header" id="mainHeader">
         <div class="logo-container">
             <a href="#" class="logo">
@@ -939,11 +1076,58 @@
         <div class="footer-content">
             <p class="footer-name">PlumeriaEnglish</p>
             <a href="mailto:learn@plumeriaenglish.com" class="footer-email">learn@plumeriaenglish.com</a>
-            <p class="copyright">© 2025 PlumeriaEnglish. All rights reserved.</p>
+            <p class="copyright">© 2026 PlumeriaEnglish. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Cookie Consent Functions
+        function acceptCookies() {
+            // Update consent to granted
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+            
+            // Store consent preference
+            localStorage.setItem('cookieConsent', 'accepted');
+            
+            // Hide banner
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        function declineCookies() {
+            // Keep consent as denied (already set by default)
+            localStorage.setItem('cookieConsent', 'declined');
+            
+            // Hide banner
+            document.getElementById('cookieConsent').classList.remove('show');
+        }
+
+        // Check if user has already made a choice
+        window.addEventListener('load', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            
+            if (consent === 'accepted') {
+                // User previously accepted
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+            } else if (consent === 'declined') {
+                // User previously declined, do nothing (already denied)
+            } else {
+                // First visit, show banner
+                setTimeout(function() {
+                    document.getElementById('cookieConsent').classList.add('show');
+                }, 1000);
+            }
+        });
+
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('mainHeader');
